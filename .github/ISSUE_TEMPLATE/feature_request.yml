@@ -1,0 +1,35 @@
+name: 🚀 Feature Request
+description: Propose a new feature or functional improvement
+title: "[FEAT]: "
+labels: ["enhancement", "status: triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this feature request!
+  - type: textarea
+    id: description
+    attributes:
+      label: 📖 Description
+      description: A clear and concise description of what the feature is.
+    validations:
+      required: true
+  - type: textarea
+    id: user-stories
+    attributes:
+      label: 👤 User Stories
+      description: As a [user], I want [action], so that [value].
+  - type: checkboxes
+    id: task-list
+    attributes:
+      label: ✅ Definition of Done (Tasks)
+      options:
+        - label: Setup Asyncio/qasync loop in main.py
+        - label: Implement Rounded-Corner Dashboard (ui/windows/dashboard.py)
+        - label: Apply Tokyo Night Theme (assets/themes/style.qss)
+        - label: Unit tests for UI transitions passed
+  - type: textarea
+    id: technical-notes
+    attributes:
+      label: 🛠 Technical Notes
+      description: Mention specific libraries or modern versions (e.g., PyQt6 6.6+, qasync).
