@@ -45,38 +45,54 @@ SleepyAgent is a professional-grade desktop suite built for creators who want to
 
 ---
 
+## 🛠️ Modern Tech Stack
 
+| Component | Technology | Version |
+| :--- | :--- | :--- |
+| **Language** | Python | 3.12+ (Typed) |
+| **GUI** | PyQt6 | 6.6+ (Asyncio integrated) |
+| **Agents** | CrewAI / Pydantic-AI | Latest Agentic Frameworks |
+| **Local LLM** | Ollama | Llama 3.2 / DeepSeek V3 |
+| **Visuals** | Diffusers / LTX-Video | Torch 2.5+ (Cuda 12.x) |
+| **Automation** | Playwright / Google-API | High-fidelity session control |
+
+---
+
+## ⚙️ Quick Start
+
+1. **Prerequisites:** Install [Ollama](https://ollama.ai) and have an NVIDIA GPU (12GB+ VRAM recommended).
+2. **Setup:** `pip install .` (using `pyproject.toml`)
+3. **Environment:** Place your `client_secrets.json` in the `/core/security/` folder.
+4. **Run:** `python main.py`
+
+---
 
 ## 📂 Project Structure
 
 ```text
 SleepyAgent/
 ├── assets/
-│   ├── icons/              # SVG/PNG icons for buttons
-│   ├── fonts/              # Custom typography (e.g., Inter, Roboto)
-│   └── images/             # Branding and placeholder graphics
+│   ├── icons/              # Modern Lucide/Phosphor SVG icons
+│   └── themes/             # QSS files for "Tokyo Night" or "Catppuccin" dark modes
 ├── core/
-│   ├── ai_engine/          # Local AI orchestration
-│   │   ├── ollama_client.py   # Script & metadata generation
-│   │   └── diffuser_gen.py    # Image/Video model connectors
-│   ├── automation/         # Posting logic
-│   │   ├── youtube_worker.py  # YT Data API v3 implementation
-│   │   └── facebook_worker.py # Meta Graph API implementation
-│   └── services/           # External integrations
-│       ├── oauth_handler.py   # Google OAuth2 Loopback flow
-│       └── config_manager.py  # Manages User API Keys & .env
+│   ├── agents/             # Agentic reasoning (The "Brain")
+│   │   ├── planner.py         # CrewAI / LangGraph orchestration
+│   │   └── tools.py           # Custom tools for agents to browse or edit files
+│   ├── ai_stack/           # Local Model Interface
+│   │   ├── ollama_py.py       # Async Ollama (Llama 3.2 / DeepSeek V3)
+│   │   └── diffusers_v2.py    # Torch 2.5+ / Diffusers for LTX-Video & FLUX
+│   ├── automation/
+│   │   ├── google_api_v3.py   # Modern google-api-python-client (Async)
+│   │   └── session_manager.py # Persistent secure browser sessions (Playwright)
+│   └── security/
+│       ├── oauth_pkce.py      # Modern PKCE flow for desktop security
+│       └── vault.py           # Cryptography-based local token storage
 ├── ui/
-│   ├── layouts/            # QSS (CSS) stylesheets & layout configs
-│   ├── widgets/            # Reusable UI components (Buttons, Inputs)
-│   │   └── components.py      # Custom QtWidgets
-│   └── windows/            # Main Page logic
-│       ├── dashboard.py       # Main view
-│       ├── auth_page.py       # Login & API Setup page
-│       └── ai_studio.py       # AI Prompt & Generation page
-├── utils/                  # Helper functions (FFmpeg, File I/O)
-├── main.py                 # Application entry point
-├── requirements.txt        # Dependencies
-└── .env                    # Local sensitive data
+│   ├── components/         # Custom QtWidgets (Modern, Rounded, Smooth)
+│   ├── layouts/            # Fluid layouts using QGridLayout and QStackedWidget
+│   └── pages/              # Logic for Dashboard, AI Studio, and Settings
+├── main.py                 # Asyncio + PyQt6 entry point
+└── pyproject.toml          # Modern dependency management (replacing requirements.txt)
 
 ```
 ## 📜 License
