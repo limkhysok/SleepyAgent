@@ -1,0 +1,21 @@
+[project]
+name = "SleepyAgent"
+version = "2.0.0"
+description = "Stealth AI Content Orchestrator using Residential IP Trust"
+requires-python = ">=3.12"
+dependencies = [
+    "PyQt6>=6.6.1",
+    "qasync>=0.27.1",            # Bridges PyQt6 and Asyncio
+    "ollama>=0.4.0",            # Local LLM API
+    "google-api-python-client",  # YouTube Data API
+    "google-auth-oauthlib",      # Google OAuth2
+    "diffusers>=0.31.0",         # For FLUX and LTX-Video
+    "torch>=2.5.0",              # Latest CUDA support
+    "moviepy>=2.0.0.dev2",       # Modern Video Editing
+    "pydantic-ai>=0.0.10",       # Type-safe AI Agents
+    "python-dotenv>=1.0.1",      # Environment variables
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
